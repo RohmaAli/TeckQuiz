@@ -14,10 +14,10 @@ class CreateQuizStudentAnswers extends Migration
     public function up()
     {
         Schema::create('quiz_student_answers', function (Blueprint $table) {
-            $table->integer('student_id')->unsigned();
-            $table->integer('quiz_event_id')->unsigned();
-            $table->integer('question_id')->unsigned();
-            $table->string('student_answer');
+            $table->integer('student_id')->nullable()->unsigned();
+            $table->integer('quiz_event_id')->nullable()->unsigned();
+            $table->integer('question_id')->unsigned()->nullable();
+            $table->string('student_answer')->nullable();
         });
         Schema::table('quiz_student_answers', function(Blueprint $table){
             $table->foreign('student_id')->references('usr_id')->on('users');

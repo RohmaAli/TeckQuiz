@@ -23,27 +23,11 @@
         <h5 class="text-center">for {{ $results->quiz_event->quiz_event_name }}</h5>
         <hr>
         <p>
-            Student name: 
-            <b>
-                {{ $results->user_profile->family_name }},
-                {{ $results->user_profile->given_name }}
-                {{ $results->user_profile->ext_name }}
-                {{$results->user_profile->middle_name }}
-            </b>
+           <h1>Thank you!</h1>
         </p>
         <br>
-        <p>
-            The above mentioned student got a rating of
-            <b>
-            @php
-                $ave = $results->score / $sum;
-                echo (number_format($ave, 2) * 100) . "%";
-            @endphp
-            </b> ({{ $results->score }}/{{$sum}} pts.).
-        </p>
-        <p>
-            This is a computer generated report. 
-        </p>
+        
+        
         <a href="/panel">Go back to home</a>
     </div>
 </body>

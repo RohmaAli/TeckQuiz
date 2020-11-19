@@ -19,10 +19,10 @@
                         <a class="nav-link {{ $classes->count() == 0 ? 'disabled' : '' }}" id="v-pills-home-tab" data-toggle="pill" href="#quiz-events" role="tab" aria-controls="v-pills-home"
                             aria-expanded="true">Quiz Events</a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link {{ $subjects->count() == 0 ? 'disabled' : '' }} " id="v-pills-profile-tab" data-toggle="pill" href="#my-classes" role="tab" aria-controls="v-pills-profile"
                             aria-expanded="true">My Classes</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#settings" role="tab" aria-controls="v-pills-settings"
                             aria-expanded="true">Settings</a>
@@ -35,8 +35,10 @@
                     <div class="tab-pane fade show active" id="dashboard" role="tabpanel" aria-labelledby="dashboard">
                         <h1 class="align-left">Dashboard</h1><hr>
                         <form action="{{route('view')}}" method="get">
-                        <button type="submit">view</button>
+                        {{ csrf_field() }}
 
+                        <button type="submit" class= "btn btn-success btn-block">View student list</button>
+<br> <br>
                         </form>
                         <div class="row">
                             <div class="col-lg-3 col-sm-12 pb-3">
@@ -45,7 +47,7 @@
                                         <h1 class="align-left display-4">{{ $quiz_events->count() }}</h1>
                                         <p class="lead align-left">Quizzes on queue</p>
                                     </div>
-                                    <a class="card-footer text-white clearfix small z-1 align-left" href="">View quizzes</a>
+                                    <!-- <a class="card-footer text-white clearfix small z-1 align-left" href="">View quizzes</a> -->
                                 </div>
                             </div>
                             <div class="col-lg-3 col-sm-12 pb-3">
@@ -54,10 +56,10 @@
                                         <h1 class="align-left display-4">{{ $finished_quiz_events->count() }}</h1>
                                         <p class="lead align-left">Quizzes finished</p>
                                     </div>
-                                    <a class="card-footer text-white clearfix small z-1 align-left" href="">View quizzes</a>
+                                    <!-- <a class="card-footer text-white clearfix small z-1 align-left" href="">View quizzes</a> -->
                                 </div>
                             </div>
-                            <div class="col-lg-3 col-sm-12 pb-3">
+                            <!-- <div class="col-lg-3 col-sm-12 pb-3">
                                 <div class="card text-white bg-info">
                                     <div class="card-body">
                                         <h1 class="align-left display-4" >{{ $classes->count() }}</h1>
@@ -65,8 +67,8 @@
                                     </div>
                                     <a class="card-footer text-white clearfix small z-1 align-left" href="">View subjects</a>
                                 </div>
-                            </div>
-                            <div class="col-lg-3 col-sm-12 pb-3">
+                            </div> -->
+                            <!-- <div class="col-lg-3 col-sm-12 pb-3">
                                 <div class="card text-white bg-success">
                                     <div class="card-body">
                                         <h1 class="align-left display-4" >{{ $subjects->count() }}</h1>
@@ -74,7 +76,7 @@
                                     </div>
                                     <a class="card-footer text-white clearfix small z-1 align-left" href="">View subjects</a>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="tab-pane fade {{ $classes->count() == 0 ? '' : '' }}" id="quiz-events" role="tabpanel" aria-labelledby="quiz-events">
@@ -85,16 +87,17 @@
                                 <thead>
                                     <tr>
                                         <th>Topic</th>
-                                        <th>Subject</th>
-                                        <th>Status</th>
+                                        <!-- <th>Subject</th> -->
+                                        <!-- <th>Status</th> -->
                                     </tr>
                                 </thead>
                                 <tbody>
+                                {{$quiz_events}}
                                     @foreach($quiz_events as $qe)
                                         <tr id="quiz_entry{{ $qe->quiz_event_id }}">
                                             <td><a href="/quiz/{{ $qe->quiz_event_id }}">{{ $qe->quiz_event_name }}</a></td>
-                                            <td>{{ $qe->classe->subject->subject_desc }}</td>
-                                            <td>{{ $qe->classe->course_sec}}</td>
+                                            <!-- <td>{{ $qe->classe->subject->subject_desc }}</td>
+                                            <td>{{ $qe->classe->course_sec}}</td> -->
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -107,8 +110,8 @@
                                     <thead>
                                         <tr>
                                             <th>Topic</th>
-                                            <th>Subject</th>
-                                            <th>Class</th>
+                                            <!-- <th>Subject</th>
+                                            <th>Class</th> -->
                                             <th></th>
                                         </tr>
                                     </thead>
@@ -116,8 +119,8 @@
                                         @foreach($finished_quiz_events as $qe)
                                             <tr>
                                                 <td><a href="/quiz/{{ $qe->quiz_event_id }}">{{ $qe->quiz_event_name }}</a></td>
-                                                <td>{{ $qe->classe->subject->subject_desc }}</td>
-                                                <td>{{ $qe->classe->course_sec}}</td>
+                                                <!-- <td>{{ $qe->classe->subject->subject_desc }}</td>
+                                                <td>{{ $qe->classe->course_sec}}</td> -->
                                             </tr>
                                         @endforeach
                                     </tbody>

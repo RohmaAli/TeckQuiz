@@ -11,18 +11,18 @@
         <div class="col-lg-9">
             <h3>{{ $quiz_details->quiz_event_name }}</h3>
             <p>This is some basic information about the quiz.</p>
-            <p>Class:
+            <!-- <p>Class:
                 <b>
                     <a href="/manage/class/view{{ $quiz_details->class_id }}"></a>{{ $quiz_details->classe->course_sec }}</b>
-            </p>
-            <p>Subject:
+            </p> -->
+            <!-- <p>Subject:
                 <b>{{ $quiz_details->classe->subject->subject_desc }}</b>
-            </p>
-            <p>Questionnaire:
+            </p> -->
+            <!-- <p>Questionnaire:
                 <b>
                     <a href="/questionnaire/{{ $quiz_details->questionnaire->questionnaire_id }}">{{ $quiz_details->questionnaire->questionnaire_name }}</a>
                 </b>
-            </p>
+            </p> -->
         </div>
         <script>
             $.ajaxSetup({
@@ -51,7 +51,7 @@
             <button href="" onclick="javascript:ChangeQuizStatus({{ $quiz_details->quiz_event_id }}, 2)" class="btn btn-primary btn-danger">End Quiz</button>
             @endif
         </div>
-        <div class="col-lg-9 pt-4">
+        <!-- <div class="col-lg-9 pt-4">
             <h3>Quiz Results</h3>
             <table class="table table-hover">
                 <thead>
@@ -83,7 +83,7 @@
                 </tbody>
             </table>
             <p class="text-center">---NOTHING FOLLOWS---</p>
-        </div>
+        </div> -->
         
     </div>
 

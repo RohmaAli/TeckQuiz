@@ -18,12 +18,10 @@
             max-width: 512px;
         }
     </style>
-    <header class="mt-4">
-        <img src="assets/img/navbar-logo.png" width="100px" height="auto" alt="" style="display: block; margin: auto;">
-    </header>
+
     <div class="container-fluid">
         <div class="col-lg-4 col-md-6 col-sm-12 mx-auto">
-            <h5 class="text-center">Login to TeckQuiz</h5>
+            <h5 class="text-center" style="margin-top:50px">Login to Online Quiz System</h5>
         </div>
         <div class="col-lg-4 col-md-6 col-sm-12 mx-auto card">
             <div class="card-body">

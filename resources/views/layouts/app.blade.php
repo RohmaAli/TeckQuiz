@@ -9,7 +9,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title')</title>
+    <title>Online quiz</title>
 
     <!-- Styles -->
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -22,7 +22,7 @@
     <header>
         <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
             <a class="navbar-brand" href="/">
-                <img src="/assets/img/navbar-logo.png" width="auto" height="35px" alt="">
+                Online Quiz
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation">
@@ -34,12 +34,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/aboutus">About us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Report a bug</a>
-                    </li>
+                   
+                   
                 </ul>
                 <!-- Login here -->
                 @if(Auth::guest())

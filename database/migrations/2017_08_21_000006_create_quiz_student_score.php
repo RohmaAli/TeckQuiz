@@ -14,10 +14,10 @@ class CreateQuizStudentScore extends Migration
     public function up()
     {
         Schema::create('quiz_student_score', function (Blueprint $table) {
-            $table->integer('student_id')->unsigned();
-            $table->integer('quiz_event_id')->unsigned();
-            $table->integer('score');
-            $table->timestamp('recorded_on');
+            $table->integer('student_id')->unsigned()->nullable();
+            $table->integer('quiz_event_id')->unsigned()->nullable();
+            $table->integer('score')->nullable();
+            $table->timestamp('recorded_on')->nullable();
         });
         Schema::table('quiz_student_score', function(Blueprint $table){
             $table->foreign('student_id')->references('usr_id')->on('users');

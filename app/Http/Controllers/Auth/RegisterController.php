@@ -76,15 +76,16 @@ class RegisterController extends Controller
         
         UserProfile::create([
             'usr_id' => $usr->usr_id,
-            'given_name' => $data['n_given'],
+            // 'given_name' => $data['n_given'],
             'family_name' => $data['n_family'],
-            'middle_name' => $data['n_middle'],
-            'ext_name' => $data['n_ext'],
+            // 'middle_name' => $data['n_middle'],
+            // 'ext_name' => $data['n_ext'],
         ]);
 
         StudentClass::create([
             'student_id' => $usr->usr_id,
-            'class_id' => $data['class_code'],
+            'class_id' => 	
+            '3KMMR',
         ]);
 
         return $out;

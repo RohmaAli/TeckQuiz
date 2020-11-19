@@ -59,8 +59,8 @@ Route::post('join', 'QuizController@JoinClass');
 // });
 
 Route::get('/view', 'DetailController@details')->name('view');
-// Route::get('/show/{id}', 'DetailController@testDetails');
-Route::get('/show/{id}', function($id)
-{
-    return $id;
-});
+Route::post('/show', 'DetailController@testDetails')->name('detail');
+// Route::get('/show/{id}', function($id)
+// {
+//     return $id;
+// }); 

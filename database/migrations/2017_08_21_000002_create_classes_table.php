@@ -14,11 +14,11 @@ class CreateClassesTable extends Migration
     public function up()
     {
         Schema::create('classes', function (Blueprint $table) {
-            $table->string('class_id', 5);
-            $table->string('course_sec');
-            $table->integer('instructor_id')->unsigned();   //instructor_id comes from users table
-            $table->integer('subject_id')->unsigned();
-            $table->boolean('class_active');
+            $table->string('class_id', 5)->nullable();
+            $table->string('course_sec')->nullable();
+            $table->integer('instructor_id')->unsigned()->nullable();   //instructor_id comes from users table
+            $table->integer('subject_id')->unsigned()->nullable();
+            $table->boolean('class_active')->nullable();
             $table->primary('class_id');
         });
         Schema::table('classes', function(Blueprint $table){

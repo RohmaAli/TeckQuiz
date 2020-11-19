@@ -15,12 +15,12 @@ class CreateQuestions extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->increments('question_id');
-            $table->integer('questionnaire_id')->unsigned();
-            $table->string('question_name');
-            $table->integer('question_type');
+            $table->integer('questionnaire_id')->unsigned()->nullable();
+            $table->string('question_name')->nullable();
+            $table->integer('question_type')->nullable();
             $table->string('choices')->nullable();
             $table->string('answer')->nullable();
-            $table->integer('points')->default(1);
+            $table->integer('points')->default(1)->nullable();
         });
         Schema::table('questions', function(Blueprint $table){
             $table->foreign('questionnaire_id')->references('questionnaire_id')->on('questionnaires');

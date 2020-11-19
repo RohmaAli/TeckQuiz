@@ -16,12 +16,15 @@
                 <input name="q_name" type="text" class="form-control" required autofocus>
             </div>
             <div class="form-group">
-                <label for="">Class</label>
-                <select name="class_id" id="class_id" class="form-control">
+                <!-- <label for="" >Class</label> -->
+               
                     @foreach ($classes as $classe)
-                    <option value="{{ $classe->class_id }}">{{ $classe->subject->subject_desc }} ({{ $classe->course_sec }})</option>
+                    <input type="hidden" name="class_id" id="class_id">
+
+                    <div value="{{ $classe->class_id }}"></div>
                     @endforeach
-                </select>
+            
+                
             </div>
         </div>
 
@@ -38,8 +41,7 @@
 
                         <select name="qt[0]" id="qt-0" class="form-control qt" required>
                             <option value="">---Select a question type---</option>
-                            <option value="1">Identification</option>
-                            <option value="2">Multiple Choice</option>
+                           
                             <option value="3">True or False</option>
                         </select>
                     </div>
@@ -52,31 +54,8 @@
                     </div>
                 </div>
                 
-                <div class="col-6" id="i-0" style="padding-top: 10px; display: none">
-                    <label for="">Correct answer</label>
-                    <input name="i[0]" type="text" class="form-control">
-                </div>
-                <div class="multiple-choice" id="mc-0" style="display: none">
-                    <div class="col-12" style="padding-top: 10px;">
-                        <div class="row">
-                            <div class="col-3"><label>Choice 1</label><input name="mc[0][0]" type="text" class="form-control"></div>
-                            <div class="col-3"><label>Choice 2</label><input name="mc[0][1]" type="text" class="form-control"></div>
-                            <div class="col-3"><label>Choice 3</label><input name="mc[0][2]" type="text" class="form-control"></div>
-                            <div class="col-3"><label>Choice 4</label><input name="mc[0][3]" type="text" class="form-control"></div>
-                        </div>
-                        <div class="row" style="padding-top: 10px;">
-                            <div class="col-8">
-                                <label for="">Correct choice</label>
-                                <select name="c-mc[0]" id="c-mc[0]" class="form-control">
-                                    <option value="1">Choice 1</option>
-                                    <option value="2">Choice 2</option>
-                                    <option value="3">Choice 3</option>
-                                    <option value="4">Choice 4</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               
+              
                 <div class="col-3" id="tf-0" style="padding-top: 10px;  display: none">
                     <label for="">Correct answer</label>
                     <select name="tf[0]" id="" class="form-control">
@@ -123,8 +102,7 @@
 
                         <select name="qt[{0}]" id="qt-{0}" class="form-control qt" required>
                             <option value="">---Select a question type---</option>
-                            <option value="1">Identification</option>
-                            <option value="2">Multiple Choice</option>
+                            
                             <option value="3">True or False</option>
                         </select>
                     </div>
@@ -136,32 +114,7 @@
                         <button type="button" class="btn btn-primary btn-block btn-sm ml-1" onclick="addQuestion()">Add Another Question</button>
                     </div>
                 </div>
-                
-                <div class="col-6" id="i-{0}" style="padding-top: 10px; display: none">
-                    <label for="">Correct answer</label>
-                    <input name="i[{0}]" type="text" class="form-control">
-                </div>
-                <div class="multiple-choice" id="mc-{0}" style="display: none">
-                    <div class="col-12" style="padding-top: 10px;">
-                        <div class="row">
-                            <div class="col-3"><label>Choice 1</label><input name="mc[{0}][0]" type="text" class="form-control"></div>
-                            <div class="col-3"><label>Choice 2</label><input name="mc[{0}][1]" type="text" class="form-control"></div>
-                            <div class="col-3"><label>Choice 3</label><input name="mc[{0}][2]" type="text" class="form-control"></div>
-                            <div class="col-3"><label>Choice 4</label><input name="mc[{0}][3]" type="text" class="form-control"></div>
-                        </div>
-                        <div class="row" style="padding-top: 10px;">
-                            <div class="col-8">
-                                <label for="">Correct choice</label>
-                                <select name="c-mc[{0}]" id="c-mc[{0}]" class="form-control">
-                                    <option value="1">Choice 1</option>
-                                    <option value="2">Choice 2</option>
-                                    <option value="3">Choice 3</option>
-                                    <option value="4">Choice 4</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+               
                 <div class="col-3" id="tf-{0}" style="padding-top: 10px;  display: none">
                     <label for="">Correct answer</label>
                     <select name="tf[{0}]" id="" class="form-control">

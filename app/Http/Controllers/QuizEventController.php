@@ -36,21 +36,22 @@ class QuizEventController extends Controller
      */
     public function store(Request $request){
         $quiz_name = $request->input('q_name');
-        $class_code = $request->input('class_id');
+        // return $request->class_id;
+        $class_code = '3KMMR';
 
         $questions = $request->input('question'); //Question
         $types = $request->input('qt'); //Question types
 
-        $i = $request->input('i'); //Correct answer for identification
-        $mc = $request->input('mc'); //Choices for multiple choice
-        $c_mc = $request->input('c-mc'); //Correct choice
+        // $i = $request->input('i'); //Correct answer for identification
+        // $mc = $request->input('mc'); //Choices for multiple choice
+        // $c_mc = $request->input('c-mc'); //Correct choice
         $tf = $request->input('tf'); //Correct answer for true or false
 
         $p = $request->input('points'); //Question point
 
-        Questionnaire::create([
-            'questionnaire_name' => $quiz_name,
-        ]);
+        // Questionnaire::create([
+        //     'questionnaire_name' => $quiz_name,
+        // ]);
 
         $q_id = Questionnaire::count(); //Questionnaire id.
 
@@ -84,13 +85,13 @@ class QuizEventController extends Controller
             ]);
         }
 
-        QuizEvent::create([
+       $e= QuizEvent::create([
             'quiz_event_name' => $quiz_name,
             'questionnaire_id' => $q_id,
             'class_id' => $class_code,
             'quiz_event_status' => 0,
         ]);
-
+// return $e;
         return redirect('/panel');
     }
 
