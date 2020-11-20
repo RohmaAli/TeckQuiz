@@ -37,22 +37,22 @@
                                 <hr>
                                 <form method="POST" action="{{ route('register') }}">
                                     {{ csrf_field() }}
-                                    <div class="form-group">
-                                        <label for="">Name</label>
-                                        <div class="form">
+                                    <!-- <div class="form-group"> -->
+                                        <!-- <label for="">Name</label>
+                                        <div class="form"> -->
                                             <!-- <input name="n_given" id="n_given" type="text" placeholder="Given name" class="form-control mb-2" value="{{ old('n_given') }}">
                                             <input name="n_middle" id="n_middle" type="text" placeholder="M.I." class="form-control mb-2" value="{{ old('n_middle') }}"> -->
-                                            <input name="n_family" id="n_family" type="text" placeholder="name" class="form-control mb-2" value="{{ old('n_family') }}">
+                                            <!-- <input name="n_family" id="n_family" type="text" placeholder="name" class="form-control mb-2" value="{{ old('n_family') }}"> -->
                                             <!-- <input name="n_ext" id="n_ext" type="text" placeholder="Ext." class="form-control mb-2" value="{{ old('n_ext') }}"> -->
-                                        </div>
-                                    </div>
-                                    <!-- <div class="form-group">
+                                        <!-- </div> -->
+                                    <!-- </div> -->
+                                    <div class="form-group">
                                         <label for="">Username</label>
                                         <input name="usr" id="usr" type="text" class="form-control {{ $errors->has('usr') ? 'is-invalid' : '' }}" value="{{ old('usr') }}">
                                         <div class="invalid-feedback">
                                             {{ $errors->first('usr') }}
                                         </div>
-                                    </div> -->
+                                    </div>
                                     <div class="form-group">
                                         <label for="">Password</label>
                                         <input name="password" id="password" type="password" class="form-control {{ $errors->has('password') ? 'is-invalid' : '' }}">
